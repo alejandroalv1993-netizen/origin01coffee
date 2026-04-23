@@ -107,11 +107,11 @@ export function HeroSection() {
 
         {/* Right column — mascot static image */}
         {/* mix-blend-mode: multiply works reliably on <img> — white bg becomes crema */}
-        <div className="hidden md:flex w-[40vw] items-end justify-center bg-[#F5F0E8] overflow-hidden">
+        <div className="hidden md:flex w-[40vw] items-center justify-center bg-[#F5F0E8] overflow-hidden">
           <img
             src="/assets/logo (2).png"
             alt="Origin 01 mascot"
-            className="w-full max-w-[480px] object-contain select-none"
+            className="w-full max-w-[620px] object-contain select-none"
             style={{ mixBlendMode: 'multiply' }}
             draggable={false}
           />
