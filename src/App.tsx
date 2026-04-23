@@ -1,5 +1,6 @@
 import { InteractiveProductCard } from "@/components/ui/card-7";
 import { HeroSection } from "@/components/HeroSection";
+import { LogoSwap } from "@/components/ui/LogoSwap";
 import { Instagram, Twitter, Facebook } from "lucide-react";
 
 const products = [
@@ -40,11 +41,7 @@ function App() {
       <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/80 backdrop-blur-md">
         <div className="container mx-auto flex h-20 items-center justify-between px-6 ">
           <div className="flex items-center gap-3">
-            <img
-              src="/assets/definitivelogo.png"
-              alt="Origin 01 mascot"
-              className="h-12 w-12 object-contain"
-            />
+            <LogoSwap className="h-12 w-12" />
             <span
               className="text-xl tracking-wider text-[#043cd5]"
               style={{ fontFamily: "'Monoton', cursive" }}
@@ -104,11 +101,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-8">
-                <img
-                  src="/assets/definitivelogo.png"
-                  alt="Origin 01 mascot"
-                  className="h-12 w-12 object-contain"
-                />
+                <LogoSwap className="h-12 w-12" />
                 <span
                   className="text-2xl tracking-wider text-[#043cd5]"
                   style={{ fontFamily: "'Monoton', cursive" }}

@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { LogoSwap } from '@/components/ui/LogoSwap'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -105,14 +106,9 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right column — transparent mascot, drop-shadow for legibility over pattern */}
+        {/* Right column — transparent mascot, swap on hover */}
         <div className="hidden md:flex w-[40vw] items-center justify-center overflow-hidden">
-          <img
-            src="/assets/definitivelogo.png"
-            alt="Origin 01 mascot"
-            className="w-[140%] max-w-none object-contain select-none"
-            draggable={false}
-          />
+          <LogoSwap className="w-[140%] max-w-none select-none" />
         </div>
       </div>
     </section>
