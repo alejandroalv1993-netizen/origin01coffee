@@ -1,6 +1,6 @@
 import { InteractiveProductCard } from "@/components/ui/card-7";
 import { HeroSection } from "@/components/HeroSection";
-import { Coffee, Instagram, Twitter, Facebook } from "lucide-react";
+import { Instagram, Twitter, Facebook } from "lucide-react";
 
 const products = [
   {
@@ -39,10 +39,12 @@ function App() {
       {/* Navigation */}
       <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/80 backdrop-blur-xl">
         <div className="container mx-auto flex h-20 items-center justify-between px-6">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-[#043cd5] flex items-center justify-center">
-              <Coffee className="h-5 w-5 text-white" />
-            </div>
+          <div className="flex items-center gap-3">
+            <img
+              src="/assets/logo (2).png"
+              alt="Origin 01 mascot"
+              className="h-12 w-12 object-contain"
+            />
             <span className="text-xl font-black uppercase tracking-tighter font-heading italic text-[#2C1F14]">
               Origin <span className="text-[#043cd5]">01</span>
             </span>
@@ -98,8 +100,12 @@ function App() {
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 mb-8">
-                <Coffee className="h-8 w-8 text-[#043cd5]" />
+              <div className="flex items-center gap-3 mb-8">
+                <img
+                  src="/assets/logo (2).png"
+                  alt="Origin 01 mascot"
+                  className="h-12 w-12 object-contain"
+                />
                 <span className="text-2xl font-black uppercase tracking-tighter font-heading italic text-[#F5F0E8]">
                   Origin <span className="text-[#043cd5]">01</span>
                 </span>
@@ -132,7 +138,7 @@ function App() {
               <h4 className="text-sm font-bold uppercase tracking-[0.2em] mb-8 text-[#F5F0E8]">Newsletter</h4>
               <p className="text-[#F5F0E8]/40 text-sm mb-6 leading-relaxed">Únete a nuestra comunidad y recibe noticias sobre lanzamientos exclusivos.</p>
               <div className="flex gap-2">
-                <input type="email" placeholder="Email" className="flex-1 bg-[#F5F0E8]/5 border border-[#F5F0E8]/10 rounded-lg px-4 py-2 text-sm text-[#F5F0E8] placeholder-[#F5F0E8]/30 outline-none focus:border-[#043cd5] transition-all" />
+                <input type="email" placeholder="Email" className="flex-1 bg-[#F5F0E8]/5 border border-[#F5F0E8]/10 rounded-lg px-4 py-2 text-sm text-[#F5F0E8] placeholder:text-[#F5F0E8]/30 outline-none focus:border-[#043cd5] transition-all" />
                 <button className="bg-[#043cd5] px-4 py-2 rounded-lg text-sm font-bold text-white hover:bg-[#0334b5] transition-all">OK</button>
               </div>
             </div>
