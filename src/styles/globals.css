@@ -3,21 +3,22 @@
 @theme {
   --font-heading: 'Syne', sans-serif;
   --font-body: 'Manrope', sans-serif;
-  
+
   --radius-lg: 1.5rem;
   --radius-md: 0.75rem;
   --radius-sm: 0.5rem;
 
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
-  
+  --color-background: #F5F0E8;
+  --color-foreground: #2C1F14;
+  --color-surface: #E8DFD0;
+
   --color-primary: #043cd5;
   --color-primary-foreground: #ffffff;
-  
-  --color-border: #e2e8f0;
-  
-  --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
+
+  --color-border: #D4C4AD;
+
+  --color-card: #EDE5D8;
+  --color-card-foreground: #2C1F14;
 }
 
 @utility transform-style-3d {
