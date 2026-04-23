@@ -45,8 +45,11 @@ function App() {
               alt="Origin 01 mascot"
               className="h-12 w-12 object-contain"
             />
-            <span className="text-xl font-black uppercase tracking-tighter font-heading italic text-[#2C1F14]">
-              Origin <span className="text-[#043cd5]">01</span>
+            <span
+              className="text-xl tracking-wider text-[#043cd5]"
+              style={{ fontFamily: "'Monoton', cursive" }}
+            >
+              Origin 01
             </span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-[#2C1F14]/60">
@@ -106,8 +109,11 @@ function App() {
                   alt="Origin 01 mascot"
                   className="h-12 w-12 object-contain"
                 />
-                <span className="text-2xl font-black uppercase tracking-tighter font-heading italic text-[#F5F0E8]">
-                  Origin <span className="text-[#043cd5]">01</span>
+                <span
+                  className="text-2xl tracking-wider text-[#043cd5]"
+                  style={{ fontFamily: "'Monoton', cursive" }}
+                >
+                  Origin 01
                 </span>
               </div>
               <p className="text-[#F5F0E8]/50 max-w-sm mb-8 leading-relaxed font-body">
