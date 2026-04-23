@@ -41,8 +41,9 @@
     font-family: var(--font-body);
     background-color: #F5F0E8;
     background-image: url('/assets/blue-white-squiggle/be1495c5-80c8-4abc-be02-f1273517f461.jpg');
-    background-size: 900px auto;
+    background-size: cover;
     background-attachment: fixed;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

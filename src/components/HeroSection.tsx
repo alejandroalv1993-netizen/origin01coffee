@@ -105,14 +105,13 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Right column — mascot static image */}
-        {/* mix-blend-mode: multiply works reliably on <img> — white bg becomes crema */}
-        <div className="hidden md:flex w-[40vw] items-center justify-center bg-[#F5F0E8] overflow-hidden">
+        {/* Right column — transparent mascot, drop-shadow for legibility over pattern */}
+        <div className="hidden md:flex w-[40vw] items-center justify-center overflow-hidden">
           <img
-            src="/assets/logo (2).png"
+            src="/assets/definitivelogo.png"
             alt="Origin 01 mascot"
             className="w-full max-w-[620px] object-contain select-none"
-            style={{ mixBlendMode: 'multiply' }}
+            style={{ filter: 'drop-shadow(0 0 32px rgba(255,255,255,0.85)) drop-shadow(0 4px 16px rgba(255,255,255,0.5))' }}
             draggable={false}
           />
         </div>

@@ -41,7 +41,7 @@ function App() {
         <div className="container mx-auto flex h-20 items-center justify-between px-6 ">
           <div className="flex items-center gap-3">
             <img
-              src="/assets/logo (2).png"
+              src="/assets/definitivelogo.png"
               alt="Origin 01 mascot"
               className="h-12 w-12 object-contain"
             />
@@ -105,7 +105,7 @@ function App() {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-8">
                 <img
-                  src="/assets/logo (2).png"
+                  src="/assets/definitivelogo.png"
                   alt="Origin 01 mascot"
                   className="h-12 w-12 object-contain"
                 />
