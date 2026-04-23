@@ -51,7 +51,7 @@ export function HeroSection() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section ref={sectionRef} className="relative bg-[#F5F0E8]/80">
       {/* pt-20 on wrapper clears the fixed nav (h-20 = 80px) */}
       <div className="flex h-screen w-full pt-20">
 
@@ -111,7 +111,7 @@ export function HeroSection() {
             src="/assets/definitivelogo.png"
             alt="Origin 01 mascot"
             className="w-full max-w-[620px] object-contain select-none"
-            style={{ filter: 'drop-shadow(0 0 32px rgba(255,255,255,0.85)) drop-shadow(0 4px 16px rgba(255,255,255,0.5))' }}
+            style={{  }}
             draggable={false}
           />
         </div>

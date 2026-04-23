@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="min-h-screen text-[#2C1F14] selection:bg-[#043cd5] selection:text-white font-body">
       {/* Navigation */}
-      <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/60 backdrop-blur-md">
+      <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/80 backdrop-blur-md">
         <div className="container mx-auto flex h-20 items-center justify-between px-6 ">
           <div className="flex items-center gap-3">
             <img
