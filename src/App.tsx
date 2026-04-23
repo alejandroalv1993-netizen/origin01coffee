@@ -35,10 +35,10 @@ const products = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F5F0E8] text-[#2C1F14] selection:bg-[#043cd5] selection:text-white font-body">
+    <div className="min-h-screen text-[#2C1F14] selection:bg-[#043cd5] selection:text-white font-body">
       {/* Navigation */}
-      <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/80 backdrop-blur-xl">
-        <div className="container mx-auto flex h-20 items-center justify-between px-6">
+      <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/60 backdrop-blur-md">
+        <div className="container mx-auto flex h-20 items-center justify-between px-6 ">
           <div className="flex items-center gap-3">
             <img
               src="/assets/logo (2).png"
@@ -68,7 +68,7 @@ function App() {
       <HeroSection />
 
       {/* Products Section */}
-      <section className="bg-[#F5F0E8] py-32 px-6">
+      <section className="bg-[#F5F0E8]/80 py-32 px-6">
         <div className="container mx-auto">
           <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">

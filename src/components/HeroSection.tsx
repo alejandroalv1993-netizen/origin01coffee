@@ -51,7 +51,7 @@ export function HeroSection() {
   }, { scope: sectionRef })
 
   return (
-    <section ref={sectionRef} className="relative bg-[#F5F0E8]">
+    <section ref={sectionRef} className="relative">
       {/* pt-20 on wrapper clears the fixed nav (h-20 = 80px) */}
       <div className="flex h-screen w-full pt-20">
 
