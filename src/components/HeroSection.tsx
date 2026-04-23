@@ -110,8 +110,7 @@ export function HeroSection() {
           <img
             src="/assets/definitivelogo.png"
             alt="Origin 01 mascot"
-            className="h-[70vh] w-auto object-contain select-none"
-            style={{  }}
+            className="w-[140%] max-w-none object-contain select-none"
             draggable={false}
           />
         </div>
