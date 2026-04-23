@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  
+  --radius-lg: 1.5rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  
+  --color-primary: #043cd5;
+  --color-primary-foreground: #ffffff;
+  
+  --color-border: #e2e8f0;
+  
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+}
+
+@utility transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+@utility preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
