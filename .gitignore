@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+build/
+
+# env files
+.env
+.env.local
+
+# brainstorm artifacts
+.superpowers/
+
+# git worktrees
+.worktrees/
+
+# OS
+.DS_Store
+Thumbs.db
