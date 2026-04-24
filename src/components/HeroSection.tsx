@@ -1,53 +1,57 @@
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { LogoSwap } from '@/components/ui/LogoSwap'
+import { FlowButton } from '@/components/ui/FlowButton'
+import { InteractiveProductCard } from '@/components/ui/card-7'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Helvetica system stack — no Google Fonts needed
-const HELVETICA = "'Helvetica Neue', Helvetica, Arial, sans-serif"
+interface HeroSectionProps {
+  mascotRef?: React.RefObject<HTMLImageElement | null>
+}
 
-export function HeroSection() {
+export function HeroSection({ mascotRef }: HeroSectionProps) {
   const sectionRef = useRef<HTMLElement>(null)
   const phrase1Ref = useRef<HTMLDivElement>(null)
   const phrase2Ref = useRef<HTMLDivElement>(null)
   const phrase3Ref = useRef<HTMLDivElement>(null)
+  const offerCardRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
     const section = sectionRef.current
     if (!section) return
 
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        pin: true,
-        scrub: 1,
-        start: 'top top',
-        end: '+=400%',
-      },
+      defaults: { duration: 1.2, ease: 'power3.out' }
     })
 
-    // WE GROW — 0–33%
+    // WE GROW
     tl.fromTo(phrase1Ref.current,
       { clipPath: 'inset(0 100% 0 0)', color: 'rgba(44, 31, 20, 0.15)' },
-      { clipPath: 'inset(0 0% 0 0)', color: '#2C1F14', duration: 1, ease: 'none' },
-      0
+      { clipPath: 'inset(0 0% 0 0)', color: '#2C1F14' }
     )
 
-    // WE ROAST — 33–66%
+    // WE ROAST
     tl.fromTo(phrase2Ref.current,
       { clipPath: 'inset(0 100% 0 0)', color: 'rgba(44, 31, 20, 0.15)' },
-      { clipPath: 'inset(0 0% 0 0)', color: '#2C1F14', duration: 1, ease: 'none' },
-      1
+      { clipPath: 'inset(0 0% 0 0)', color: '#043cd5' },
+      "-=0.8" // Slight overlap
     )
 
-    // WE DRINK — 66–100%
+    // WE DRINK
     tl.fromTo(phrase3Ref.current,
       { clipPath: 'inset(0 100% 0 0)', color: 'rgba(44, 31, 20, 0.15)' },
-      { clipPath: 'inset(0 0% 0 0)', color: '#2C1F14', duration: 1, ease: 'none' },
-      2
+      { clipPath: 'inset(0 0% 0 0)', color: '#2C1F14' },
+      "-=0.8" // Slight overlap
+    )
+
+    // Offer Card Reveal
+    tl.fromTo(offerCardRef.current,
+      { y: 50, opacity: 0, scale: 0.9 },
+      { y: 0, opacity: 1, scale: 1, duration: 1.5, ease: 'power4.out' },
+      "-=0.4"
     )
   }, { scope: sectionRef })
 
@@ -57,20 +61,9 @@ export function HeroSection() {
       <div className="flex h-screen w-full pt-20">
 
         {/* Left column — badge, phrases, CTAs */}
-        <div className="flex flex-1 flex-col justify-center px-12 md:px-20 gap-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2C1F14]/10 bg-[#E8DFD0] px-4 py-1.5 w-fit">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#043cd5] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#043cd5]" />
-            </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#2C1F14]/80">
-              Fresh Batch Just Roasted
-            </span>
-          </div>
-
-          {/* Phrase stack — Helvetica, reveal left-to-right on scroll */}
-          <div className="flex flex-col gap-0">
+        <div className="flex flex-[1.2] flex-col justify-start pt-40 items-start px-12 md:px-20 gap-6 pb-12">
+          {/* Phrase stack — Notable, reveal left-to-right on scroll */}
+          <div className="flex flex-col gap-0 items-start -ml-[0.06em]">
             {[
               { ref: phrase1Ref, text: 'WE GROW' },
               { ref: phrase2Ref, text: 'WE ROAST' },
@@ -80,14 +73,16 @@ export function HeroSection() {
                 key={text}
                 ref={ref}
                 style={{
-                  fontFamily: HELVETICA,
-                  fontSize: 'clamp(2.8rem, 7.5vw, 6.5rem)',
+                  fontFamily: 'var(--font-brand)',
+                  fontSize: 'clamp(1.8rem, 4.5vw, 4rem)',
                   fontWeight: 900,
+                  fontStyle: 'normal',
                   textTransform: 'uppercase' as const,
-                  letterSpacing: '-0.03em',
+                  letterSpacing: '-0.05em',
                   lineHeight: 1.0,
                   color: 'rgba(44, 31, 20, 0.15)',
                   clipPath: 'inset(0 100% 0 0)',
+                  textAlign: 'left',
                 }}
               >
                 {text}
@@ -95,20 +90,56 @@ export function HeroSection() {
             ))}
           </div>
 
+          {/* New Sub-copy */}
+          <p className="text-[#2C1F14]/60 text-sm md:text-base font-bold uppercase tracking-[0.25em] font-body pl-[4.5em]">
+            expertos tostadores de café
+          </p>
+
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button className="w-full sm:w-auto rounded-full bg-[#043cd5] px-10 py-4 text-sm font-black uppercase tracking-widest text-white shadow-[0_10px_40px_rgba(4,60,213,0.3)] transition-all hover:scale-105 hover:bg-[#0334b5] active:scale-95">
-              Explorar Catálogo
-            </button>
-            <button className="w-full sm:w-auto rounded-full border border-[#2C1F14]/20 bg-[#E8DFD0] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#2C1F14] hover:bg-[#DDD4C4] transition-all">
-              Nuestro Proceso
-            </button>
+          <div className="flex flex-col sm:flex-row gap-6 mt-2">
+            <FlowButton text="Explorar Catálogo" variant="primary" className="w-full sm:w-auto" />
+            <FlowButton text="Nuestro Proceso" variant="outline" className="w-full sm:w-auto" />
+          </div>
+        </div>
+
+        {/* Middle: Floating Offer Card */}
+        <div 
+          ref={offerCardRef}
+          className="hidden xl:flex flex-col items-center justify-center relative z-20 px-8"
+        >
+          <div className="relative group">
+             {/* Decorative badge */}
+             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#043cd5] text-white text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full z-30 shadow-[0_10px_20px_rgba(4,60,213,0.3)] whitespace-nowrap">
+               Oferta de la semana
+             </div>
+             
+             {/* Product Card — slightly scaled down for hero */}
+             <div className="scale-90 transform-gpu transition-transform duration-500 group-hover:scale-95">
+                <InteractiveProductCard
+                  title="Double Roasted"
+                  description="Cuerpo y potencia. Notas a cacao puro y tueste intenso."
+                  price="16.80€"
+                  imageUrl="/assets/double_v.png"
+                  logoUrl="https://api.iconify.design/lucide:zap.svg?color=white"
+                />
+             </div>
+             
+             {/* Sparkle effects or subtle background glow could go here */}
+             <div className="absolute -inset-4 bg-[#043cd5]/5 blur-3xl rounded-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
           </div>
         </div>
 
         {/* Right column — transparent mascot, swap on hover */}
-        <div className="hidden md:flex w-[40vw] items-center justify-center overflow-hidden">
-          <LogoSwap className="w-[140%] max-w-none select-none" />
+        <div className="hidden lg:flex flex-[0.8] items-center justify-center relative">
+          <LogoSwap className="w-[200%] scale-[1.8] translate-x-[-15%] max-w-none select-none" />
+          {/* Invisible target anchor for IntroOverlay fly-to animation */}
+          <img
+            ref={mascotRef}
+            src="/assets/logosurprised.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none select-none"
+          />
         </div>
       </div>
     </section>
