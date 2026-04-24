@@ -15,6 +15,13 @@ export function IntroOverlay({ targetRef }: IntroOverlayProps) {
   const logoRef = useRef<HTMLImageElement>(null)
   const animatedRef = useRef(false)
 
+  // Lock body scroll while overlay is visible
+  useEffect(() => {
+    if (!visible) return
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = '' }
+  }, [visible])
+
   useEffect(() => {
     if (!visible) return
 
@@ -45,6 +52,7 @@ export function IntroOverlay({ targetRef }: IntroOverlayProps) {
         ease: 'power3.inOut',
         onComplete: () => {
           sessionStorage.setItem('intro_seen', '1')
+          window.scrollTo({ top: 0, behavior: 'instant' })
           setVisible(false)
         },
       })
