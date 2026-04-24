@@ -125,11 +125,11 @@ function App() {
       <HeroSection mascotRef={mascotRef} />
 
       {/* Products Section */}
-      <section className="bg-[#F5F0E8]/80 py-32">
+      <section className="bg-[#F5F0E8]/80 py-16 md:py-32">
         <div className="container mx-auto px-6">
-          <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="mb-12 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-6xl md:text-8xl font-black uppercase tracking-tighter text-[#2C1F14] leading-none mb-6 font-heading">
+              <h2 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-[#2C1F14] leading-none mb-6 font-heading">
                 Nuestra <br />
                 <span className="text-[#043cd5]">Selección</span>
               </h2>
@@ -149,9 +149,9 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#F5F0E8]/80 py-20 px-6 border-t border-[#2C1F14]/10 backdrop-blur-md">
+      <footer className="bg-[#F5F0E8]/80 py-12 md:py-20 px-6 border-t border-[#2C1F14]/10 backdrop-blur-md">
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-10 md:mb-20">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center gap-3 mb-8">
                 <span
