@@ -42,7 +42,7 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
 
   return (
     <div 
-      className="relative w-full max-w-[90vw] mx-auto px-12"
+      className="relative w-full max-w-[90vw] mx-auto px-4 sm:px-8 md:px-12"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -57,7 +57,7 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
       >
         <CarouselContent className="-ml-4">
           {products.map((product, index) => (
-            <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/4">
+            <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/4">
               <div className="p-1">
                 <InteractiveProductCard {...product} className="w-full" />
               </div>
