@@ -58,10 +58,10 @@ export function HeroSection({ mascotRef }: HeroSectionProps) {
   return (
     <section ref={sectionRef} className="relative bg-[#F5F0E8]/80">
       {/* pt-20 on wrapper clears the fixed nav (h-20 = 80px) */}
-      <div className="flex h-screen w-full pt-20">
+      <div className="flex flex-col lg:flex-row min-h-screen w-full pt-14 sm:pt-20">
 
         {/* Left column — badge, phrases, CTAs */}
-        <div className="flex flex-[1.2] flex-col justify-start pt-40 items-start px-12 md:px-20 gap-6 pb-12">
+        <div className="flex flex-[1.2] flex-col justify-start pt-10 sm:pt-20 lg:pt-40 items-start px-6 sm:px-8 md:px-12 lg:px-20 gap-6 pb-12">
           {/* Phrase stack — Notable, reveal left-to-right on scroll */}
           <div className="flex flex-col gap-0 items-start -ml-[0.06em]">
             {[
@@ -74,7 +74,7 @@ export function HeroSection({ mascotRef }: HeroSectionProps) {
                 ref={ref}
                 style={{
                   fontFamily: 'var(--font-brand)',
-                  fontSize: 'clamp(1.8rem, 4.5vw, 4rem)',
+                  fontSize: 'clamp(2.2rem, 8vw, 4rem)',
                   fontWeight: 900,
                   fontStyle: 'normal',
                   textTransform: 'uppercase' as const,
@@ -91,7 +91,7 @@ export function HeroSection({ mascotRef }: HeroSectionProps) {
           </div>
 
           {/* New Sub-copy */}
-          <p className="text-[#2C1F14]/60 text-sm md:text-base font-bold uppercase tracking-[0.25em] font-body pl-[4.5em]">
+          <p className="text-[#2C1F14]/60 text-sm md:text-base font-bold uppercase tracking-[0.25em] font-body pl-0 sm:pl-[4.5em]">
             expertos tostadores de café
           </p>
 
@@ -99,6 +99,11 @@ export function HeroSection({ mascotRef }: HeroSectionProps) {
           <div className="flex flex-col sm:flex-row gap-6 mt-2">
             <FlowButton text="Explorar Catálogo" variant="primary" className="w-full sm:w-auto" />
             <FlowButton text="Nuestro Proceso" variant="outline" className="w-full sm:w-auto" />
+          </div>
+
+          {/* Mobile mascot — visible only below lg */}
+          <div className="flex lg:hidden justify-center w-full mt-8 pb-8">
+            <LogoSwap className="h-[40vw] w-auto max-h-64" />
           </div>
         </div>
 
