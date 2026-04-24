@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { FlowButton } from "./FlowButton";
 
 interface InteractiveProductCardProps extends React.HTMLAttributes<HTMLDivElement> {
   imageUrl: string;
@@ -12,6 +13,7 @@ interface InteractiveProductCardProps extends React.HTMLAttributes<HTMLDivElemen
 export function InteractiveProductCard({
   className,
   imageUrl,
+  logoUrl,
   title,
   description,
   price,
@@ -43,7 +45,7 @@ export function InteractiveProductCard({
         <div className="flex items-start justify-between gap-2">
           <h3
             className="text-lg font-black uppercase leading-tight text-[#2C1F14] tracking-tight"
-            style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}
+            style={{ fontFamily: "var(--font-heading)" }}
           >
             {title}
           </h3>
@@ -61,9 +63,7 @@ export function InteractiveProductCard({
         <div className="h-px w-full bg-[#D4C4AD]/50" />
 
         {/* CTA */}
-        <button className="w-full rounded-xl bg-[#043cd5] py-3 text-xs font-black uppercase tracking-widest text-white transition-all duration-200 hover:bg-[#0334b5] active:scale-[0.98]">
-          Añadir al carrito
-        </button>
+        <FlowButton text="Añadir al carrito" variant="primary" className="w-full" />
       </div>
     </div>
   );

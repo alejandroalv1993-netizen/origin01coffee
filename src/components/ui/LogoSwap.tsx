@@ -17,7 +17,7 @@ export function LogoSwap({ className, alt = "Origin 01 mascot" }: LogoSwapProps)
       />
       {/* Surprised logo — fades in on hover */}
       <img
-        src="/assets/logo-_2_.svg"
+        src="/assets/logosurprised.png"
         alt={alt}
         className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
         draggable={false}

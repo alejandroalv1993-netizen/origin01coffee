@@ -18,3 +18,10 @@ build/
 # OS
 .DS_Store
 Thumbs.db
+
+# tools
+.agents/
+.claude/
+.playwright-mcp/
+.qwen/
+skills-lock.json

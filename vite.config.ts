@@ -18,4 +18,13 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    host: true,
+    port: 5174,
+    strictPort: true,
+    allowedHosts: true,
+    hmr: {
+      clientPort: 443,
+    },
+  },
 })
