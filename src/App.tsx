@@ -95,7 +95,7 @@ function App() {
       <IntroOverlay targetRef={mascotRef} />
       {/* Navigation */}
       <nav className="fixed top-0 z-50 w-full border-b border-[#2C1F14]/10 bg-[#F5F0E8]/80 backdrop-blur-md">
-        <div className="container mx-auto flex h-20 items-center px-6">
+        <div className="container mx-auto flex h-14 sm:h-20 items-center px-3 sm:px-6">
           {/* Left: Branding */}
           <div className="flex flex-1 items-center gap-3">
             <span
@@ -116,7 +116,7 @@ function App() {
 
           {/* Right: Empty for balance (was Account) */}
           <div className="flex-1 flex justify-end">
-            <FlowButton text="Login" variant="outline" className="text-sm px-6 h-10" />
+            <FlowButton text="Login" variant="outline" className="hidden sm:flex text-sm px-6 h-10" />
           </div>
         </div>
       </nav>
